@@ -9,10 +9,19 @@ instances:
     password: "admin"                 # Store this securely
     auth_type: digest                 # MarkLogic requires digest authentication
     enable_health_service_checks: true  # Collect health metrics
+    
     tags:
       - env:production
       - service:marklogic
       - region:us-east-2
+
+    resource_filters:
+      - resource_type: cluster
+        pattern: "*"
+      - resource_type: forest
+        pattern: "*"
+      - resource_type: database
+        pattern: "*"
 
 logs:
   - type: file
