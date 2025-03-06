@@ -1,14 +1,16 @@
 #Erie Master Datadog Agent Configuration
-#agen install command
+
+#agent install command
 DD_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
 DD_SITE="datadoghq.com" \
 bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
+
 #sudo systemctl restart datadog-agent
 #sudo datadog-agent configcheck
 #sudo datadog-agent status | grep -A10 "Logs Agent"
 
 ## Datadog API Key
-api_key: 20210d4174c50436ce0a7f7022d78d0e  
+api_key: xxx
 
 hostname: erie-marklogic
 
