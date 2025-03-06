@@ -1,0 +1,5 @@
+logs:
+  - type: file
+    path: /var/opt/MarkLogic/Logs/ErrorLog.txt
+    service: marklogic
+    source: marklogic
