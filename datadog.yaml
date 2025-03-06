@@ -1,6 +1,6 @@
 #Erie Master Datadog Agent Configuration
 
-#agent install command
+#agent install command or copy command from Datadog UI - Integrations - Agent
 DD_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
 DD_SITE="datadoghq.com" \
 bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
