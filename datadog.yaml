@@ -7,6 +7,7 @@ bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.s
 
 #sudo systemctl restart datadog-agent
 #sudo datadog-agent configcheck
+#sudo datadog-agent status
 #sudo datadog-agent status | grep -A10 "Logs Agent"
 
 ## Datadog API Key
