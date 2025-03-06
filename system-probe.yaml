@@ -1,0 +1,5 @@
+system_probe_config:
+  enabled: true
+  enable_tcp_queue_length: true
+  enable_http_monitoring: true
+  collect_dns_stats: true
