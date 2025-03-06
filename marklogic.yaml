@@ -10,14 +10,14 @@ instances:
     enable_health_service_checks: true
     resource_filters:
       - resource_type: forest
-        pattern: "Documents"
+        pattern: ".*"  # Collects all forests
       - resource_type: database
-        pattern: ".*"
+        pattern: ".*"  # Collects all databases
         group: "Default"
       - resource_type: host
-        pattern: ".*"
+        pattern: ".*"  # Collects all hosts
       - resource_type: server
-        pattern: ".*"
+        pattern: ".*"  # Collects all servers
     tags:
       - env:test
       - service:marklogic
