@@ -12,8 +12,7 @@ instances:
       - resource_type: forest
         pattern: "Documents"
       - resource_type: database
-        include: false
-        pattern: "Doc*"
+        pattern: ".*"
         group: "Default"
       - resource_type: host
         pattern: ".*"
