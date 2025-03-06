@@ -1,27 +1,28 @@
 #/etc/datadog-agent/conf.d/marklogic.d/conf.yaml
 init_config:
-  ## Set a timeout for API calls to MarkLogic
   timeout: 15
 
 instances:
-  - url: "http://3.135.199.136:8002"  # MarkLogic API URL
-    username: "ddagent"               # Use a Datadog-specific user
-    password: "admin"                 # Store this securely
-    auth_type: digest                 # MarkLogic requires digest authentication
-    enable_health_service_checks: true  # Collect health metrics
-    
-    tags:
-      - env:production
-      - service:marklogic
-      - region:us-east-2
-
+  - url: "http://localhost:8002"
+    username: "ddagent"
+    password: "admin"
+    auth_type: digest
+    enable_health_service_checks: true
     resource_filters:
-      - resource_type: cluster
-        pattern: "*"
       - resource_type: forest
-        pattern: "*"
+        pattern: "Documents"
       - resource_type: database
-        pattern: "*"
+        include: false
+        pattern: "Doc*"
+        group: "Default"
+      - resource_type: host
+        pattern: ".*"
+      - resource_type: server
+        pattern: ".*"
+    tags:
+      - env:test
+      - service:marklogic
+      - region:us-east-1
 
 logs:
   - type: file
