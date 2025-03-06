@@ -1,0 +1,91 @@
+#Erie Master Datadog Agent Configuration
+
+#sudo systemctl restart datadog-agent
+#sudo datadog-agent configcheck
+#sudo datadog-agent status | grep -A10 "Logs Agent"
+
+## Datadog API Key
+api_key: 20210d4174c50436ce0a7f7022d78d0e  
+
+hostname: erie-marklogic
+
+## Datadog Site
+site: datadoghq.com  
+
+## Host Tags
+tags:
+  - environment:test
+  - service:MarkLogic
+  - role:database
+  - name:erie-marklogic-01
+  - aws-region:us-east-1
+  - team:operations
+
+## Logging Configuration
+logs_enabled: true
+log_level: INFO
+
+logs:
+  - type: file
+    path: /var/log/syslog
+    service: system
+    source: syslog
+  - type: file
+    path: /var/log/messages
+    service: system
+    source: syslog
+  - type: file
+    path: /var/opt/MarkLogic/Logs/ErrorLog.txt
+    service: marklogic
+    source: marklogic
+
+## Infrastructure Monitoring
+process_config:
+  enabled: "true"
+
+## Enable Cloud Network Monitoring (Instead of USM)
+network:
+  enabled: true
+
+## Enable System Probe for Network Monitoring
+system_probe_config:
+  enabled: true
+  enable_tcp_queue_length: true
+  enable_http_monitoring: true
+
+## Enable Live Process Monitoring
+process_config:
+  enabled: "true"
+
+## Enable Remote Configuration
+remote_configuration:
+  enabled: true
+
+## Enable SBOM (Software Bill of Materials)
+sbom:
+  enabled: true
+
+## MarkLogic Integration
+marklogic:
+  instances:
+    - host: localhost
+      port: 8002
+      username: admin
+      password: i-0f747e7ba06336eff
+      tags:
+        - marklogic-db
+        - aws-host
+
+tags:
+  - env:test
+  - name:erie-marklogic-01
+  - service:MarkLogic
+  - role:database
+  - aws-region:us-east-1
+  - team:operations
+
+#MarkLogic integration configuration
+instances:
+  - server: "http://3.135.199.136:8002"
+    username: "ddagent"
+    password: "admin"
