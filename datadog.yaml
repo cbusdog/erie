@@ -66,10 +66,6 @@ process_config:
 remote_configuration:
   enabled: true
 
-## Enable SBOM (Software Bill of Materials)
-sbom:
-  enabled: true
-
 ## MarkLogic Integration
 marklogic:
   instances:
