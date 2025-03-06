@@ -26,9 +26,9 @@ instances:
 logs:
   - type: file
     path: /var/opt/MarkLogic/Logs/ErrorLog.txt
-    service: marklogic
     source: marklogic
-      - type: file
+    service: marklogic
+  - type: file
     path: /var/opt/MarkLogic/Logs/8002_AccessLog.txt
     source: marklogic
     service: marklogic
