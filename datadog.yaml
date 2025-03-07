@@ -1,11 +1,13 @@
 #Erie Master Datadog Agent Configuration
-#	/etc/datadog-agent/datadog.yaml
+
+#/etc/datadog-agent/datadog.yaml
 
 #agent install command or copy command from Datadog UI -> Integrations -> Agent
 DD_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
 DD_SITE="datadoghq.com" \
 bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
 
+#Useful Commands
 #sudo systemctl restart datadog-agent
 #sudo datadog-agent configcheck
 #sudo datadog-agent status
