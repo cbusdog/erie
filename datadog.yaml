@@ -45,9 +45,11 @@ logs:
     source: syslog
   - type: file
     path: /var/opt/MarkLogic/Logs/ErrorLog.txt
+    service: marklogic
     source: marklogic
   - type: file
     path: /var/opt/MarkLogic/Logs/80002_AccessLog.txt
+    service: marklogic
     source: marklogic
 
 ## Infrastructure Monitoring
