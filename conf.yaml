@@ -1,0 +1,9 @@
+logs:
+  - type: file
+    path: "/var/log/messages"
+    service: "system"
+    source: "syslog"
+    log_processing_rules:
+      - type: multi_line
+        name: new_log_start_with_date
+        pattern: "^\\w{3} \\d{1,2} \\d{2}:\\d{2}:\\d{2}"
