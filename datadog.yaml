@@ -45,16 +45,10 @@ logs:
     source: syslog
   - type: file
     path: /var/opt/MarkLogic/Logs/ErrorLog.txt
-    service: marklogic
     source: marklogic
   - type: file
-    path: /var/opt/MarkLogic/Logs/8000_ErrorLog.txt
-    service: marklogic
+    path: /var/opt/MarkLogic/Logs/80002_AccessLog.txt
     source: marklogic
-    log_processing_rules:
-      - type: include_at_match
-        name: include_error_logs
-        pattern: "Error"
 
 ## Infrastructure Monitoring
 process_config:
