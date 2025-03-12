@@ -1,3 +1,5 @@
+#sudo mkdir -p /etc/datadog-agent/conf.d/system_logs.d
+#sudo vi /etc/datadog-agent/conf.d/system_logs.d/conf.yaml
 logs:
   - type: file
     path: /var/log/messages
