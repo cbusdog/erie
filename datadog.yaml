@@ -34,24 +34,6 @@ tags:
 logs_enabled: true
 log_level: INFO
 
-logs:
-  - type: file
-    path: /var/log/syslog
-    service: system
-    source: syslog
-  - type: file
-    path: /var/log/messages
-    service: system
-    source: syslog
-  - type: file
-    path: /var/opt/MarkLogic/Logs/ErrorLog.txt
-    service: marklogic
-    source: marklogic
-  - type: file
-    path: /var/opt/MarkLogic/Logs/80002_AccessLog.txt
-    service: marklogic
-    source: marklogic
-
 ## Infrastructure Monitoring
 process_config:
   enabled: "true"
@@ -74,29 +56,3 @@ process_config:
 ## Enable Remote Configuration
 remote_configuration:
   enabled: true
-
-## MarkLogic Integration
-marklogic:
-  init_config:
-    timeout: 15  # Added from marklogic.yaml
-
-  instances:
-    - url: "http://localhost:8002"
-      username: "ddagent"
-      password: "admin"
-      auth_type: digest  # Added from marklogic.yaml
-      enable_health_service_checks: true  # Added from marklogic.yaml
-      resource_filters:
-        - resource_type: forest
-          pattern: ".*"
-        - resource_type: database
-          pattern: ".*"
-          group: "Default"
-        - resource_type: host
-          pattern: ".*"
-        - resource_type: server
-          pattern: ".*"
-      tags:
-        - env:test
-        - service:marklogic
-        - region:us-east-1
