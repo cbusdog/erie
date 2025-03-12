@@ -4,8 +4,8 @@ init_config:
 
 instances:
   - url: "http://localhost:8002"
-    username: "ddagent"
-    password: "admin"
+    username: "datadog"
+    password: "xxxx"
     auth_type: digest
     enable_health_service_checks: true
     resource_filters:
