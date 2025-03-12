@@ -13,7 +13,6 @@ instances:
         pattern: ".*"  # Collects all forests
       - resource_type: database
         pattern: ".*"  # Collects all databases
-        group: "Default"
       - resource_type: host
         pattern: ".*"  # Collects all hosts
       - resource_type: server
