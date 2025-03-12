@@ -1,6 +1,6 @@
 #/etc/datadog-agent/conf.d/marklogic.d/conf.yaml
 init_config:
-  timeout: 15
+  timeout: 30
 
 instances:
   - url: "http://localhost:8002"
